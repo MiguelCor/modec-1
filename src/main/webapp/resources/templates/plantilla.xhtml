@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="default.css" />
+        <h:outputStylesheet  library="css" name="cssLayout.css"/>
+        <title>Modec</title>
+    </h:head>
+
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">
+                <b:navBar class="nav" inverse="false" fluid="true" brand="Modec" brand-href="">
+                    <b:navbarLinks>
+                        <b:dropMenu value="Hombre" icon-awesome="fa-group">
+                            <b:dropMenu value='Ropa'  icon-awesome='gamepad' iconAlign="center">                            
+                                <b:navbarLinks pull="center">
+                                    <b:navLink value="Camisas"  href=""/>
+                                    <b:navLink value="Abrigos"  href=""/>
+                                </b:navbarLinks>                              
+                            </b:dropMenu>
+                        </b:dropMenu>
+                        <b:dropMenu value="Mujer" icon-awesome="fa-group">
+                            <b:dropMenu value='Ropa'  icon-awesome='gamepad' iconAlign="center">                            
+                                <b:navbarLinks pull="center">
+                                    <b:navLink value="Camisas"  href=""/>
+                                    <b:navLink value="Abrigos"  href=""/>
+                                </b:navbarLinks>                              
+                            </b:dropMenu>
+                        </b:dropMenu>
+                        <!--Lo Siguiente solo lo puede ver Empleado o Superior-->
+                        <b:dropMenu value="Empleado" icon-awesome="fa-group">
+                            <b:navLink value="Entregas"  href=""/>
+                            <b:navLink value="Productos"  href=""/>
+                        </b:dropMenu>
+                        <!--Lo Siguiente solo lo puede ver Administrador-->
+                        <b:dropMenu value="Administrador" icon-awesome="fa-group">
+                            <b:navLink value="Usuarios"  href=""/>
+                            <b:navLink value="Proveedores"  href=""/>
+                        </b:dropMenu>
+                    </b:navbarLinks>
+                    <b:navbarLinks pull="right" style-class="hidden-xs">
+                        <!--                        <b:inputText value="Buscar" style="width: 190px">
+                                                    <f:facet name="prepend">
+                                                        <b:iconAwesome name="fa-search"/>
+                                                    </f:facet>
+                                                </b:inputText>-->
+                        <b:navLink value="" icon-awesome="fa-cart-plus" href="#"/>
+                        <b:dropMenu value="#{usuarioController.nombre_usuario}" icon-awesome="fa-user">
+                            <b:navLink value="Configuración" icon-awesome="fa-cog" href="#"/>
+                            <b:navLink value="Salir" icon-awesome="fa-sign-out" href="#{request.contextPath}/faces/Login.xhtml"/>
+                        </b:dropMenu>
+                    </b:navbarLinks>
+                </b:navBar>
+            </ui:insert>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <p>@2021 Modec, Inc. Todos los Derechos Reservados</p>
+            </ui:insert>
+        </div>
+
+    </h:body>
+</html>
