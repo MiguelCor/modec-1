@@ -1,4 +1,3 @@
-
 #top {
     position: relative;
     background-color: white;
@@ -13,7 +12,7 @@
     background-color: #940432;
     color: white;
     padding: 5px;
-    margin: 0px 0px 10px 0px;
+    margin-top: 10px;
 }
 
 #bottom {
@@ -37,11 +36,11 @@
     width: 150px;
 }
 
-.center_content {
+/*.center_content {
     position: relative;
     background-color: #dddddd;
     padding: 5px;
-}
+}*/
 
 .left_content {
     background-color: #dddddd;
