@@ -7,13 +7,13 @@ import java.sql.Blob;
  *
  * @author Grupo 7
  */
-public class AbrigosHombre {
+public class Producto {
 
     // Atributos
     private int id_producto;
     private String nombre_producto;
     private String descripcion;
-    private InputStream imagen;
+    private String urlImagen;
     private float precio;
     private char genero;
     private String talla;
@@ -22,13 +22,13 @@ public class AbrigosHombre {
     private int id_tipoproducto;
 
     // Constructores
-    public AbrigosHombre() {}
+    public Producto() {}
 
-    public AbrigosHombre(int id_producto, String nombre_producto, String descripcion, InputStream imagen, float precio, char genero, String talla, int cantidad, int id_entrega, int id_tipoproducto) {
+    public Producto(int id_producto, String nombre_producto, String descripcion, String urlImagen, float precio, char genero, String talla, int cantidad, int id_entrega, int id_tipoproducto) {
         this.id_producto = id_producto;
         this.nombre_producto = nombre_producto;
         this.descripcion = descripcion;
-        this.imagen = imagen;
+        this.urlImagen = urlImagen;
         this.precio = precio;
         this.genero = genero;
         this.talla = talla;
@@ -36,7 +36,7 @@ public class AbrigosHombre {
         this.id_entrega = id_entrega;
         this.id_tipoproducto = id_tipoproducto;
     }
-    
+
     // Getters & Setters
     public int getId_producto() {
         return id_producto;
@@ -62,12 +62,12 @@ public class AbrigosHombre {
         this.descripcion = descripcion;
     }
 
-    public InputStream getImagen() {
-        return imagen;
+    public String getUrlImagen() {
+        return urlImagen;
     }
 
-    public void setImagen(InputStream imagen) {
-        this.imagen = imagen;
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     public float getPrecio() {
@@ -117,5 +117,5 @@ public class AbrigosHombre {
     public void setId_tipoproducto(int id_tipoproducto) {
         this.id_tipoproducto = id_tipoproducto;
     }
-    
+
 } // Fin Clase Producto
