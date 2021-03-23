@@ -1,14 +1,52 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
 
     <body>
 
         <ui:composition template="./../../resources/templates/plantilla.xhtml">
 
             <ui:define name="content">
-                content
+                <h:form>
+                    <b:container fluid="true">
+                        <b:panel title="Lista De Estudiantes" look="primary" collapsible="false">
+                            <b:dataTable value="#{carritoController.getCarrito(usuarioController.id_usuario)}"
+                                         var="carrito"
+                                         excel="true"
+                                         csv="true"
+                                         pdf="true"
+                                         columnVisibility="true"
+                                         copy="true"
+                                         print="true">
+                                <b:dataTableColumn value="#{carrito.nombre_producto}" 
+                                                   label="Nombre del Producto"
+                                                   width="9%"
+                                                   />
+                                <b:dataTableColumn value="#{carrito.cantidad}" 
+                                                   label="Cantidad"
+                                                   width="15%"
+                                                   />
+                                <b:dataTableColumn value="#{carrito.precio}" 
+                                                   label="Precio"
+                                                   width="19%"
+                                                   />
+                                <b:dataTableColumn label="Imagen" width="19%"> 
+                                    <img src="${carrito.urlImagen}" height="200px" width="160px"></img>
+                                </b:dataTableColumn>
+                                <b:dataTableColumn style="text-align: center"
+                                                   label="Accion"
+                                                   width="10%">
+                                    <b:commandButton value="Eliminar"
+                                                     />
+                                </b:dataTableColumn>
+
+                            </b:dataTable>
+                        </b:panel>
+                    </b:container>
+                </h:form> 
             </ui:define>
 
         </ui:composition>

@@ -6,6 +6,7 @@ package model;
 public class Usuario {
     
     // Atributos
+    private int id_usuario;
     private String nUsuario;
     private String pw_usuario;
     private String correo_usuario;
@@ -16,15 +17,27 @@ public class Usuario {
 
     // Constructores
     public Usuario() {}
- 
-    public Usuario(String nombre_usuario, String apellido, String apellido2, String id_rol) {
+
+    public Usuario(int id_usuario, String nUsuario, String pw_usuario, String correo_usuario, String nombre_usuario, String apellido, String apellido2, String id_rol) {
+        this.id_usuario = id_usuario;
+        this.nUsuario = nUsuario;
+        this.pw_usuario = pw_usuario;
+        this.correo_usuario = correo_usuario;
         this.nombre_usuario = nombre_usuario;
         this.apellido = apellido;
         this.apellido2 = apellido2;
         this.id_rol = id_rol;
     }
-
+    
     // Getters & Setters
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
     public String getnUsuario() {
         return nUsuario;
     }
@@ -80,7 +93,5 @@ public class Usuario {
     public void setId_rol(String id_rol) {
         this.id_rol = id_rol;
     }
-
-    
  
 } // Fin Clase Usuario

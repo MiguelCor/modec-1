@@ -21,6 +21,7 @@ public class UsuarioController extends Usuario implements Serializable {
     public String getUsuario() {
         Usuario usuario = UsuarioGestion.getUsuario(this.getnUsuario(), this.getCorreo_usuario(), this.getPw_usuario());
         if (usuario != null) {
+            this.setId_usuario(usuario.getId_usuario());
             this.setNombre_usuario(usuario.getNombre_usuario());
             this.setApellido(usuario.getApellido());
             this.setApellido2(usuario.getApellido2());
