@@ -35,4 +35,15 @@ public class CarritoController extends Carrito implements Serializable {
         }
     }
     
+    public String deleteCarrito(int id_carrito) {
+        if (CarritoGestion.deleteCarrito(id_carrito)) {
+            return "Carrito.xhtml";
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
+                    "Ocurrio un error al insertar el producto");
+            FacesContext.getCurrentInstance().addMessage("editaEstudianteForm:identificacion", msg);
+            return "Principal.xhtml";
+        }
+    }
+    
 } // Fin CDI BEAN CarritoController

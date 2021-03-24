@@ -19,12 +19,13 @@ public class Carrito {
     public Carrito() {}
 
     // Lista
-    public Carrito(String nombre_producto, int cantidad, float precio, String urlImagen, int id_usuario) {
+    public Carrito(String nombre_producto, float precio, String urlImagen, int id_carrito, int id_usuario, int cantidad) {
         this.nombre_producto = nombre_producto;
-        this.cantidad = cantidad;
         this.precio = precio;
         this.urlImagen = urlImagen;
+        this.id_carrito = id_carrito;
         this.id_usuario = id_usuario;
+        this.cantidad = cantidad;
     }
     
     // Insertar

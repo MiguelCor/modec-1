@@ -12,37 +12,31 @@
             <ui:define name="content">
                 <h:form>
                     <b:container fluid="true">
-                        <b:panel title="Lista De Estudiantes" look="primary" collapsible="false">
+                        <b:panel title="Carrito de Compras" look="success" collapsible="false">
                             <b:dataTable value="#{carritoController.getCarrito(usuarioController.id_usuario)}"
-                                         var="carrito"
-                                         excel="true"
-                                         csv="true"
-                                         pdf="true"
-                                         columnVisibility="true"
-                                         copy="true"
-                                         print="true">
+                                         var="carrito">
                                 <b:dataTableColumn value="#{carrito.nombre_producto}" 
                                                    label="Nombre del Producto"
-                                                   width="9%"
+                                                   width="5%"
                                                    />
                                 <b:dataTableColumn value="#{carrito.cantidad}" 
                                                    label="Cantidad"
-                                                   width="15%"
+                                                   width="5%"
                                                    />
                                 <b:dataTableColumn value="#{carrito.precio}" 
                                                    label="Precio"
-                                                   width="19%"
+                                                   width="5%"
                                                    />
-                                <b:dataTableColumn label="Imagen" width="19%"> 
-                                    <img src="${carrito.urlImagen}" height="200px" width="160px"></img>
+                                <b:dataTableColumn label="Imagen" width="0.3%"> 
+                                    <img src="${carrito.urlImagen}" height="100px" width="80px"></img>
                                 </b:dataTableColumn>
                                 <b:dataTableColumn style="text-align: center"
                                                    label="Accion"
-                                                   width="10%">
+                                                   width="3%">
                                     <b:commandButton value="Eliminar"
+                                                     action="#{carritoController.deleteCarrito(carrito.id_carrito)}"
                                                      />
                                 </b:dataTableColumn>
-
                             </b:dataTable>
                         </b:panel>
                     </b:container>

@@ -94,7 +94,6 @@ a:link:hover, a:visited:hover  {
     border-right: 1px solid black;
 }
 
-
 *{
     margin-left: 2px;
     padding: 0;
@@ -102,6 +101,7 @@ a:link:hover, a:visited:hover  {
     list-style: none;
     text-decoration: none;
 }
+
 .wrapper {
     display: flex;
     position: relative;
