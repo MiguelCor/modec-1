@@ -67,5 +67,28 @@ public class CarritoGestion {
         }
         return false;
     }
+    
+    // Metodo encargado de contar cuantos productos hay en el carrito
+    public static int countCarrito(int id_usuario) {
+        ArrayList<Carrito> list = new ArrayList<>();
+        try {
+            PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_GETCARRITO);
+            sentencia.setInt(1, id_usuario);
+            ResultSet rs = sentencia.executeQuery();
+            while (rs != null && rs.next()) {
+                list.add(new Carrito(
+                        rs.getString(1), // NOMBRE_PRODUCTO
+                        rs.getFloat(2), // PRECIO
+                        rs.getString(3), // URLIMAGEN
+                        rs.getInt(4), // ID_CARRITO
+                        rs.getInt(5), // CANTIDAD
+                        rs.getInt(id_usuario) // ID_USUARIO
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoGestion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list.size();
+    }
 
 } // Fin Clase CarritoGestion
