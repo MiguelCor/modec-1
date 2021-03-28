@@ -5,11 +5,57 @@
     box-sizing: border-box;
 }
 
+body h1 {
+    margin-left: 2%;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.sidebar {
+    position: fixed;
+    top: 14%;
+    left: 0px;
+    width: 16%;
+    height: 75;
+    white-space: nowrap;
+}
+
+.sidebar p {
+    margin-left: 10%;
+}
+
+.sidebar h2 {
+    margin-left: 15%;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar:hover {
+    position: fixed;
+}
+
+.sidebar-item {
+    list-style-type: none;
+    margin-left: 14%;
+    padding: 5px;
+}
+
+.sidebar-item a {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.sidebar-item a:hover {
+    text-decoration: none;
+    font-weight: normal;
+    color: grey;
+}
+
 /*Esta clase sirve cuando hay 1 o 3 articulos*/
 .relleno {
-    margin-bottom: 50px;
+    margin-bottom: -30%;
 }
- 
+
 /*Esta clase sirve para cuando hay dos articulos*/
 .relleno2 {
     margin-bottom: -148px;
@@ -17,11 +63,10 @@
 
 /*PRODUCTO 1*/
 .product-card{
-    width: 320px;
-    padding: 30px;
-    margin-left: 600px;
-    margin-top: 240px;
-    margin-bottom: -190px;
+    width: 25%;
+    margin-left: 30%;
+    margin-top: 10%;
+    margin-bottom: -7%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     border: 2px solid;
@@ -61,7 +106,7 @@
 }
 
 .product-button1 {
-    margin-left: 60px;
+    margin-left: 100%;
     background-color: black;
     width: 150px;
     text-decoration: none;
@@ -77,10 +122,10 @@
 
 /*PRODUCTO 2*/
 .product-card2{
-    width: 320px;
-    padding: 30px;
-    margin-left: 1000px;
-    margin-top: -357px;
+    width: 25%;
+    margin-left: 57%;
+    margin-top: -38%;
+    margin-bottom: 40.9%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     border: 2px solid;
@@ -100,7 +145,7 @@
 }
 
 .product-button2 {
-    margin-left: 60px;
+    margin-left: 100%;
     background-color: black;
     width: 150px;
     text-decoration: none;
@@ -116,11 +161,10 @@
 
 /*PRODUCTO 3*/
 .product-card3{
-    width: 320px;
-    padding: 30px;
-    margin-left: 1400px;
-    margin-top: -357px;
-    margin-bottom: -190px;
+    width: 25%;
+    margin-left: 84%;
+    margin-top: -79%;
+    margin-bottom: 82%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     border: 2px solid;
@@ -140,7 +184,7 @@
 }
 
 .product-button3 {
-    margin-left: 60px;
+    margin-left: 100%;
     background-color: black;
     width: 150px;
     text-decoration: none;

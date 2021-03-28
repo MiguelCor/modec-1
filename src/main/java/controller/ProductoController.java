@@ -1,5 +1,6 @@
 package controller;
 
+import gestion.CarritoGestion;
 import gestion.ProductoGestion;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -45,5 +46,9 @@ public class ProductoController extends Producto implements Serializable {
         }
     }
     
+    // Devuelve la cantidad de articulos en el catalogo
+    public int countProducto(int tipoProducto) {
+        return ProductoGestion.countProductos(tipoProducto);
+    }
 
 } // Fin Clase ProductoController

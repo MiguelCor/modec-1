@@ -9,10 +9,36 @@
     <body>
         <ui:composition template="../../../resources/templates/plantilla.xhtml">
             <ui:define name="content">
-                <c:forEach var="producto" items="${productoController.getProductos(1)}" begin="0" end="0">
+                <h1>Camisas Manga Corta (${productoController.countProducto(1)})</h1>
+                <div class="sidebar">
+                    <ul>
+                        <h2>Relacionados</h2>
+                        <li class="sidebar-item"><a href="#">Camisas Manga Corta</a></li>
+                        <li class="sidebar-item"><a href="#">Camisas Manga Larga</a></li>
+                        <li class="sidebar-item"><a href="#">Camisas Tipo Polo</a></li>
+                    </ul>
+                    <p>---------------------------------------------------------</p>
+                    <ul>
+                        <h2>Genero</h2>
+                        <li class="sidebar-item"><input type="checkbox" checked=""> Hombre</input></li>
+                        <li class="sidebar-item"><input type="checkbox"> Mujer</input></li>
+                    </ul>
+                    <p>---------------------------------------------------------</p>
+                    <ul>
+                        <h2>Tallas</h2>
+                        <li class="sidebar-item"><input type="checkbox"> XS</input></li>
+                        <li class="sidebar-item"><input type="checkbox"> S</input></li>
+                        <li class="sidebar-item"><input type="checkbox"> M</input></li>
+                        <li class="sidebar-item"><input type="checkbox"> X</input></li>
+                        <li class="sidebar-item"><input type="checkbox"> XL</input></li>
+                        <li class="sidebar-item"><input type="checkbox"> XLL</input></li>
+                    </ul>
+                </div>
+
+                <c:forEach var="producto" items="${productoController.getProductos(1)}" begin="0" end="1">
                     <div class="product-card">
                         <h1>${producto.nombre_producto}</h1>
-                        <p>${producto.descripcion}</p>
+                        <p>${producto.descripcion} ${producto.talla}</p>
                         <p>${producto.precio}</p>
                         <div class="product-pic">
                             <img src="${producto.urlImagen}"/>
@@ -25,10 +51,10 @@
                     </div>
                 </c:forEach>
 
-                <c:forEach var="producto" items="${productoController.getProductos(1)}" begin="1" end="1">
+                <c:forEach var="producto" items="${productoController.getProductos(1)}" begin="2" end="3">
                     <div class="product-card2">
                         <h1>${producto.nombre_producto}</h1>
-                        <p>${producto.descripcion}</p>
+                        <p>${producto.descripcion} ${producto.talla}</p>
                         <p>${producto.precio}</p>
                         <div class="product-pic">
                             <img src="${producto.urlImagen}"/>
@@ -41,10 +67,10 @@
                     </div>
                 </c:forEach>
 
-                <c:forEach var="producto" items="${productoController.getProductos(1)}" begin="2" end="2">
+                <c:forEach var="producto" items="${productoController.getProductos(1)}" begin="4" end="5">
                     <div class="product-card3">
                         <h1>${producto.nombre_producto}</h1>
-                        <p>${producto.descripcion}</p>
+                        <p>${producto.descripcion} ${producto.talla}</p>
                         <p>${producto.precio}</p>
                         <div class="product-pic">
                             <img src="${producto.urlImagen}"/>
@@ -56,7 +82,6 @@
                         </div>
                     </div>
                 </c:forEach>
-                <div class="relleno"/>
             </ui:define>
         </ui:composition>
     </body>

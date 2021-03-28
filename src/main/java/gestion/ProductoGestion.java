@@ -56,6 +56,33 @@ public class ProductoGestion {
         }
         return list;
     }
+    
+    //Metodo encargado de traer la cantidad de productos
+    public static int countProductos(int tipoProducto) {
+        ArrayList<Producto> list = new ArrayList<>();
+        try {
+            PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_GETPRODUCTOS);
+            sentencia.setInt(1, tipoProducto);
+            ResultSet rs = sentencia.executeQuery();
+            while (rs != null && rs.next()) {
+                list.add(new Producto(
+                        rs.getInt(1), // ID
+                        rs.getString(2), // NOMBRE
+                        rs.getString(3), // DESCRIPCION
+                        rs.getString(4), // IMAGEN
+                        rs.getFloat(5), // PRECIO
+                        rs.getString(6).charAt(0), // GENERO
+                        rs.getString(7), // TALLA
+                        rs.getInt(8), // CANTIDAD
+                        rs.getInt(9), // ID ENTREGA
+                        rs.getInt(10) // ID TIPOPRODUCTO
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoGestion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list.size();
+    }
 
     // Metodo encargado de devolver un unico producto
     public static Producto getProducto(int id_producto) {
