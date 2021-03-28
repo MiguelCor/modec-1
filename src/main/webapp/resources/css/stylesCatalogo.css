@@ -1,0 +1,167 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+/*Esta clase sirve cuando hay 1 o 3 articulos*/
+.relleno {
+    margin-bottom: 50px;
+}
+ 
+/*Esta clase sirve para cuando hay dos articulos*/
+.relleno2 {
+    margin-bottom: -148px;
+}
+
+/*PRODUCTO 1*/
+.product-card{
+    width: 320px;
+    padding: 30px;
+    margin-left: 600px;
+    margin-top: 240px;
+    margin-bottom: -190px;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    border: 2px solid;
+    padding: 8px 24px;
+    border-radius: 15px;
+}
+
+.product-card h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.product-card p {
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.product-pic img {
+    width: inherit;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.product-price {
+    color: black;
+    font-size: 23px;
+}
+
+.product-button1 {
+    margin-left: 60px;
+    background-color: black;
+    width: 150px;
+    text-decoration: none;
+    border: 1px solid;
+    padding: 4px 14px;
+    border-radius: 20px;
+    transition: .4s linear;
+}
+
+.product-button1 p {
+    color: white;
+}
+
+/*PRODUCTO 2*/
+.product-card2{
+    width: 320px;
+    padding: 30px;
+    margin-left: 1000px;
+    margin-top: -357px;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    border: 2px solid;
+    padding: 8px 24px;
+    border-radius: 15px;
+}
+
+.product-card2 h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.product-card2 p {
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.product-button2 {
+    margin-left: 60px;
+    background-color: black;
+    width: 150px;
+    text-decoration: none;
+    border: 1px solid;
+    padding: 4px 14px;
+    border-radius: 20px;
+    transition: .4s linear;
+}
+
+.product-button2 p {
+    color: white;
+}
+
+/*PRODUCTO 3*/
+.product-card3{
+    width: 320px;
+    padding: 30px;
+    margin-left: 1400px;
+    margin-top: -357px;
+    margin-bottom: -190px;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    border: 2px solid;
+    padding: 8px 24px;
+    border-radius: 15px;
+}
+
+.product-card3 h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.product-card3 p {
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.product-button3 {
+    margin-left: 60px;
+    background-color: black;
+    width: 150px;
+    text-decoration: none;
+    border: 1px solid;
+    padding: 4px 14px;
+    border-radius: 20px;
+    transition: .4s linear;
+}
+
+.product-button3 p {
+    color: white;
+}
+
+.product-button1:hover {
+    transform: scale(1.06);
+}
+
+.product-button2:hover {
+    transform: scale(1.06);
+}
+
+.product-button3:hover {
+    transform: scale(1.06);
+}

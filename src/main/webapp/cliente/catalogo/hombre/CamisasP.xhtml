@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:body>
+        <ui:composition template="../../../resources/templates/plantilla.xhtml">
+            <ui:define name="content">
+                <c:forEach var="producto" items="${productoController.getProductos(3)}" begin="0" end="0">
+                    <div class="product-card">
+                        <h1>${producto.nombre_producto}</h1>
+                        <p>${producto.descripcion}</p>
+                        <p>${producto.precio}</p>
+                        <div class="product-pic">
+                            <img src="${producto.urlImagen}"/>
+                        </div>
+                        <div class="product-info">
+                            <h:form>
+                                <b:commandButton class="product-button1" value="Carrito" action="#{carritoController.insertCarrito(usuarioController.id_usuario, producto.id_producto, 1)}" />
+                            </h:form>
+                        </div>
+                    </div>
+                </c:forEach>
+
+                <c:forEach var="producto" items="${productoController.getProductos(3)}" begin="1" end="1">
+                    <div class="product-card2">
+                        <h1>${producto.nombre_producto}</h1>
+                        <p>${producto.descripcion}</p>
+                        <p>${producto.precio}</p>
+                        <div class="product-pic">
+                            <img src="${producto.urlImagen}"/>
+                        </div>
+                        <div class="product-info">
+                            <h:form>
+                                <b:commandButton class="product-button2" value="Carrito" action="#{carritoController.insertCarrito(usuarioController.id_usuario, producto.id_producto, 1)}" />
+                            </h:form>
+                        </div>
+                    </div>
+                </c:forEach>
+
+                <c:forEach var="producto" items="${productoController.getProductos(3)}" begin="2" end="2">
+                    <div class="product-card3">
+                        <h1>${producto.nombre_producto}</h1>
+                        <p>${producto.descripcion}</p>
+                        <p>${producto.precio}</p>
+                        <div class="product-pic">
+                            <img src="${producto.urlImagen}"/>
+                        </div>
+                        <div class="product-info">
+                            <h:form>
+                                <b:commandButton class="product-button3" value="Carrito" action="#{carritoController.insertCarrito(usuarioController.id_usuario, producto.id_producto, 1)}" />
+                            </h:form>
+                        </div>
+                    </div>
+                </c:forEach>
+                <div class="relleno"/>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>

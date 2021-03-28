@@ -9,7 +9,8 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet library="css" name="default.css" />
-        <h:outputStylesheet  library="css" name="cssLayout.css"/>
+        <h:outputStylesheet  library="css" name="cssLayout.css" />
+        <h:outputStylesheet  library="css" name="stylesCatalogo.css" />
         <title>Modec</title>
     </h:head>
 
@@ -22,18 +23,18 @@
                         <b:dropMenu value="Hombre" icon-awesome="fa-group">
                             <b:dropMenu value='Ropa'  icon-awesome='gamepad' iconAlign="center">                            
                                 <b:navbarLinks pull="center">
-                                    <b:navLink value="Camisas Manga Corta" href="#{request.contextPath}/faces/cliente/hombre/CamisasMC.xhtml"/>
-                                    <b:navLink value="Camisas Manga Larga" href="#{request.contextPath}/faces/cliente/hombre/CamisasML.xhtml"/>
-                                    <b:navLink value="Camisas Polo" href="#{request.contextPath}/faces/cliente/hombre/CamisasP.xhtml"/>
-                                    <b:navLink value="Hoodies" href="#{request.contextPath}/faces/cliente/hombre/Hoodie.xhtml"/>
-                                    <b:navLink value="Sweaters" href="#{request.contextPath}/faces/cliente/hombre/Sweater.xhtml"/>
+                                    <b:navLink value="Camisas Manga Corta" href="#{request.contextPath}/faces/cliente/catalogo/hombre/CamisasMC.xhtml"/>
+                                    <b:navLink value="Camisas Manga Larga" href="#{request.contextPath}/faces/cliente/catalogo/hombre/CamisasML.xhtml"/>
+                                    <b:navLink value="Camisas Polo" href="#{request.contextPath}/faces/cliente/catalogo/hombre/CamisasP.xhtml"/>
+                                    <b:navLink value="Hoodies" href="#{request.contextPath}/faces/cliente/catalogo/hombre/Hoodie.xhtml"/>
+                                    <b:navLink value="Sweaters" href="#{request.contextPath}/faces/cliente/catalogo/hombre/Sweater.xhtml"/>
                                 </b:navbarLinks>                              
                             </b:dropMenu>
                         </b:dropMenu>
                         <b:dropMenu value="Mujer" icon-awesome="fa-group">
                             <b:dropMenu value='Ropa'  icon-awesome='gamepad' iconAlign="center">                            
                                 <b:navbarLinks pull="center">
-                                    <b:navLink value="Camisas"  href="#{request.contextPath}/faces/cliente/mujer/CamisasM.xhtml"/>
+                                    <b:navLink value="Camisas"  href="#{request.contextPath}/faces/cliente/catalogo/mujer/CamisasM.xhtml"/>
                                     <b:navLink value="Abrigos"  href=""/>
                                 </b:navbarLinks>                              
                             </b:dropMenu>

@@ -28,6 +28,7 @@ import model.Conexion;
 public class ProductoGestion {
 
     private static final String SQL_GETPRODUCTOS = "select * from producto where id_tipoproducto =?";
+    private static final String SQL_GETPRODUCTO = "select * from producto where id_producto =?";
 
     //Metodo encargado de traer los productos
     public static ArrayList<Producto> getProductos(int tipoProducto) {
@@ -54,6 +55,33 @@ public class ProductoGestion {
             Logger.getLogger(ProductoGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
+    }
+
+    // Metodo encargado de devolver un unico producto
+    public static Producto getProducto(int id_producto) {
+        Producto producto = null;
+        try {
+            PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_GETPRODUCTO);
+            sentencia.setInt(1, id_producto);
+            ResultSet rs = sentencia.executeQuery();
+            while (rs != null && rs.next()) {
+                producto = new Producto(
+                        rs.getInt(1), // ID
+                        rs.getString(2), // NOMBRE
+                        rs.getString(3), // DESCRIPCION
+                        rs.getString(4), // IMAGEN
+                        rs.getFloat(5), // PRECIO
+                        rs.getString(6).charAt(0), // GENERO
+                        rs.getString(7), // TALLA
+                        rs.getInt(8), // CANTIDAD
+                        rs.getInt(9), // ID ENTREGA
+                        rs.getInt(10) // ID TIPOPRODUCTO
+                );
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoGestion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return producto;
     }
 
 } // Fin Clase CamisasHombreGestion
