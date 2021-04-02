@@ -27,7 +27,7 @@ public class CarritoController extends Carrito implements Serializable {
     // Metodo que inserta un producto dentro del carrito
     public String insertCarrito(int id_usuario, int id_producto, int cantidad) {
         if (CarritoGestion.insertCarrito(id_usuario, id_producto, cantidad)) {
-            return "Carrito.xhtml";
+            return "Principal.xhtml";
         } else {
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
                     "Ocurrio un error al insertar el producto");
