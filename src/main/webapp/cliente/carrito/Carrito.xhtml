@@ -10,7 +10,7 @@
         <ui:composition template="./../../resources/templates/plantilla.xhtml">
 
             <ui:define name="content">
-                <h:form>
+                <h:form id="carrito">
                     <b:container fluid="true">
                         <b:panel title="Carrito de Compras" look="success" collapsible="false">
                             <b:dataTable value="#{carritoController.getCarrito(usuarioController.id_usuario)}"
@@ -30,12 +30,12 @@
                                 <b:dataTableColumn label="Imagen" width="0.3%"> 
                                     <img src="${carrito.urlImagen}" height="100px" width="80px"></img>
                                 </b:dataTableColumn>
-                                <b:dataTableColumn style="text-align: center"
-                                                   label="Accion"
-                                                   width="3%">
-                                    <b:commandButton value="Eliminar"
-                                                     action="#{carritoController.deleteCarrito(carrito.id_carrito)}"
-                                                     />
+                                <b:dataTableColumn style="text-align: center" label="Accion" width="3%">
+                                    <b:commandButton value="Eliminar" update="@form"
+                                                     onclick="ajax:carritoController.deleteCarrito(carrito.id_carrito)"/>
+                                    <b:column medium-screen="2">
+                                        <h:outputLabel value="" for="msj"/>                                    
+                                    </b:column>
                                 </b:dataTableColumn>
                             </b:dataTable>
                         </b:panel>

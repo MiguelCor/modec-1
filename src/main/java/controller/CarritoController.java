@@ -17,7 +17,8 @@ import model.Carrito;
 @SessionScoped
 public class CarritoController extends Carrito implements Serializable {
 
-    public CarritoController() {}
+    public CarritoController() {
+    }
 
     // Metodo que devuelve la lista de articulos dentro del carrito
     public List<Carrito> getCarrito(int id_usuario) {
@@ -27,24 +28,20 @@ public class CarritoController extends Carrito implements Serializable {
     // Metodo que inserta un producto dentro del carrito
     public String insertCarrito(int id_usuario, int id_producto, int cantidad) {
         if (CarritoGestion.insertCarrito(id_usuario, id_producto, cantidad)) {
-            return "Principal.xhtml";
+            return "cliente/carrito/Carrito.xhtml";
         } else {
-            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
-                    "Ocurrio un error al insertar el producto");
-            FacesContext.getCurrentInstance().addMessage("editaEstudianteForm:identificacion", msg);
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Ocurrio un error al insertar el producto");
+            FacesContext.getCurrentInstance().addMessage("catalogo:mensaje", msg);
             return "Principal.xhtml";
         }
     }
 
-    // Metodo que borra un producto dentro del carrito
-    public String deleteCarrito(int id_carrito) {
+    // Metodo que borra un producto dentro del carrito AJAX
+    public void deleteCarrito(int id_carrito) {
         if (CarritoGestion.deleteCarrito(id_carrito)) {
-            return "Carrito.xhtml";
         } else {
-            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
-                    "Ocurrio un error al insertar el producto");
-            FacesContext.getCurrentInstance().addMessage("editaEstudianteForm:identificacion", msg);
-            return "Principal.xhtml";
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Ocurrio un error al insertar el producto");
+            FacesContext.getCurrentInstance().addMessage("carrito:msj", msg);
         }
     }
 
