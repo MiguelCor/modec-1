@@ -43,6 +43,11 @@
                         <b:dropMenu value="Empleado" icon-awesome="fa-group">
                             <b:navLink value="Entregas" href=""/>
                             <b:navLink value="Productos" href=""/>
+                            <b:dropMenu value='Graficos'  icon-awesome='gamepad' iconAlign="center">                            
+                                <b:navbarLinks pull="center">
+                                    <b:navLink value="Cant. Articulos Carrito" href="#{request.contextPath}/faces/empleado/graficos/GraficoCarrito.xhtml"/>
+                                </b:navbarLinks>                              
+                            </b:dropMenu>
                         </b:dropMenu>
                         <!--Lo Siguiente solo lo puede ver Administrador-->
                         <b:dropMenu value="Administrador" icon-awesome="fa-group">
